@@ -1,26 +1,27 @@
-<!-- <div class="row">
+<div class="row">
+    <!-- <app-product ngClass="col-lg-4 col-md-6 mb-4"></app-product>
     <app-product ngClass="col-lg-4 col-md-6 mb-4"></app-product>
-    <app-product ngClass="col-lg-4 col-md-6 mb-4"></app-product>
-    <app-product ngClass="col-lg-4 col-md-6 mb-4"></app-product>
-</div> -->
-<div ngClass="col-lg-4 col-md-6 mb-4">
-    <div class="card h-100">
-        <a href="#"><img class="card-img-top" [src]="product.img" alt=""></a>
-        <div class="card-body">
-            <h4 class="card-title">
-                <a href="#">{{product.name}}</a>
-            </h4>
-            <h5>${{product.price}}</h5>
-            <p class="card-text">{{product.desc}}</p>
-            <p class="card-text">{{product.status ? 'còn hành' : 'hết hành'}}</p>
-        </div>
-        <div class="card-footer">
-            <button class="btn btn-primary" (click)='changeStatus()'> thay đổi</button>
+    <app-product ngClass="col-lg-4 col-md-6 mb-4"></app-product> -->
+    <div ngClass="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
+        <div class="card h-100">
+            <a href="#"><img class="card-img-top" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="#">{{product.name}}</a>
+                </h4>
+                <h5>${{product.price}}</h5>
+                <p class="card-text">{{product.desc}}</p>
+                <p class="card-text">{{product.status ? 'còn hành' : 'hết hành'}}</p>
+                <button (click)='removeItem(product.id)'>Delete</button> 
+                <button (click)='showdetai(product)'>Chi tiết</button> 
+            </div>
             <form action="">
                 <input type="text" [(ngModel)]="product.name" name="product-name">
                 <input type="text" [(ngModel)]="product.desc" name="product-desc">
             </form>
-            
         </div>
-    </div>
+    </div>   
+</div>
+<div *ngIf="selected">
+    <app-product [key]='selected'></app-product>
 </div>
