@@ -7,6 +7,7 @@ import { ManagerComponent } from './manager/manager.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { NewComponent } from './new/new.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'list-product', component: ProductListComponent},
   {path: 'product/:id', component: ProductDetailComponent},
   {path: 'manager', component: ManagerComponent},
+  {path: 'new', component: NewComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
