@@ -8,6 +8,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { NewComponent } from './new/new.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'add-product', component: ProductAddComponent},
   {path: 'slide-product', component: SlideComponent},
   {path: 'list-product', component: ProductListComponent},
-  {path: 'product/:id', component: ProductDetailComponent},
+  {path: 'product/:productID', component: ProductDetailComponent},
+  {path: 'product/edit/:productID', component: ProductEditComponent},
   {path: 'manager', component: ManagerComponent},
   {path: 'new', component: NewComponent},
   {path: '**', component: NotFoundComponent}
