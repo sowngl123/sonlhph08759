@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  api = 'https://5c999ea71a4c360014a0ff5b.mockapi.io/products';
+  api = 'https://5e79aefa17314d0016133349.mockapi.io/products';
   products = Data;
   constructor(
     private http: HttpClient
