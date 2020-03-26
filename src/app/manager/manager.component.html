@@ -1,6 +1,6 @@
 <head class="d-flex mb-3 pt-5 justify-content-between">
   <h2>Manager</h2>
-  <button routerLink='add-product' >Add Product</button>
+  <button routerLink='/add-product' >Add Product</button>
 </head>
 <table style="width:100%" border="1">
     <tr>
@@ -8,7 +8,7 @@
       <th>Name</th>
       <th>Price</th>
       <th>Desc</th>
-      <th>Action</th>
+      <th width="200">Action</th>
     </tr>
     <tr *ngFor="let product of products">
       <td>{{product.id}}</td>
@@ -17,8 +17,8 @@
       <td>{{product.desc}}</td>
       <td>
         <button class="btn btn-primary" (click)='removeItem(product.id)'>Delete</button> 
-        <button class="btn btn-primary" routerLink='product/:productID'>Detail</button> 
-        <button class="btn btn-primary" routerLink='product/edit/:productID'>Edit</button> 
+        <button class="btn btn-primary" routerLink="/product/{{product.id}}">Detail</button> 
+        <button class="btn btn-primary" routerLink="/product/edit/{{product.id}}">Edit</button> 
       </td>
     </tr>
   </table>
