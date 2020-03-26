@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Data } from "../MockData";
 import { Product } from "../Product";
 import { ProductService } from "../product.service";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-manager",
@@ -15,7 +15,8 @@ export class ManagerComponent implements OnInit {
   product: Product;
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +28,10 @@ export class ManagerComponent implements OnInit {
     });
   }
   removeItem(id) {
-    this.products = this.products.filter(product => product.id != id);
+    // console.log(id);
+    this.product = this.productService.removeProduct(id).subscribe(Data => {
+      this.router.navigateByUrl('/manager')
+    });
+    // this.products = this.products.filter(product => product.id != id);
   }
 }
