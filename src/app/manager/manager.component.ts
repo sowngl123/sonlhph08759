@@ -29,8 +29,8 @@ export class ManagerComponent implements OnInit {
   }
   removeItem(id) {
     // console.log(id);
-    this.product = this.productService.removeProduct(id).subscribe(Data => {
-      this.router.navigateByUrl('/manager')
+    this.productService.removeProduct(id).subscribe(reporn => {
+      this.products = this.products.filter(product => product.id != id);
     });
     // this.products = this.products.filter(product => product.id != id);
   }
