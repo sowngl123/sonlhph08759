@@ -24,10 +24,12 @@ export class ProductService {
   removeProduct(id){
     return this.products.filter(product => product.id !== id);
   }
-  addProduct(product){
-    const newProduct = { id: 5, ...product};
-    this.products.push(newProduct);
-    console.log(this.products)
+    addProduct(product): Observable<Product>{
+    return this.http.post<Product>(`${this.api}`, product);
+  
+    // const newProduct = { id: 5, ...product};
+    // this.products.push(newProduct);
+    // console.log(this.products)
   }
   updateProduct(product){
      return this.http.put<Product>(`${this.api}/${product.id}`, product);
