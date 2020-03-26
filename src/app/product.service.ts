@@ -22,8 +22,8 @@ export class ProductService {
     // return this.products.find(product => product.id == id);
   }
   removeProduct(id):Observable<Product> {
-    
-    return this.http.get<Product>(`${this.api}/${id}`);
+
+    return
     // return this.products.filter(product => product.id !== id);
   }
     addProduct(product): Observable<Product>{
