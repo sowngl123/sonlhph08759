@@ -23,14 +23,9 @@ export class ManagerComponent implements OnInit {
     this.getProducts();
   }
   getProducts(){
-    this.products = this.productService.getProducts();
-  }
-  // removeItem(id){
-  //   this.products = this.productService.removeProduct(id);
-  // }
-
-  showdetai(product) {
-    this.selected = product;
+    this.productService.getProducts().subscribe(Data => {
+      this.products = Data;
+    })
   }
   removeItem(id) {
     this.products = this.products.filter(product => product.id != id);

@@ -23,7 +23,9 @@ export class ProductListComponent implements OnInit {
     this.getProducts();
   }
   getProducts(){
-    this.products = this.productService.getProducts();
+    this.productService.getProducts().subscribe(Data => {
+      this.products = Data;
+    })
   }
   // removeItem(id){
   //   this.products = this.productService.removeProduct(id);
